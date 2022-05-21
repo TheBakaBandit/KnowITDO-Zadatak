@@ -1,4 +1,9 @@
-﻿Function DodajKDI
+param (
+	$Path,
+	$Log
+	)
+
+Function DodajKDI
 #ova funkcija vrsi prebacivanje izvoda u KDI
 {
  param (
@@ -20,11 +25,9 @@
  Remove-Item ./$mb/$Datum/temp -Recurse
 
 }
- #Ovde moze da se promeni po potrebi lokacija foldera izvodi
- cd /izvodi
- #ovde moze da se promeni lokacija log fajla
- Start-Transcript -Append ./KDIlog.txt
- 
+  Start-Transcript -Append $Log/KDIlog.txt
+  cd $Path
+   
  $organizacije = Get-ChildItem -Path ./ -Directory -Name
  #prolazimo kroz sve organizacije
  foreach($mb in $organizacije) 
