@@ -20,10 +20,10 @@
  Remove-Item ./$mb/$Datum/temp -Recurse
 
 }
- #ovde moze da se promeni lokacija log fajla
- Start-Transcript -Append /KDIlog.txt
  #Ovde moze da se promeni po potrebi lokacija foldera izvodi
  cd /izvodi
+ #ovde moze da se promeni lokacija log fajla
+ Start-Transcript -Append ./KDIlog.txt
  
  $organizacije = Get-ChildItem -Path ./ -Directory -Name
  #prolazimo kroz sve organizacije
